@@ -1,0 +1,34 @@
+---
+title: "Análisis de Biología Computacional - Propuesta de Proyecto"
+author: "Annete Pamela Ruiz Abreu - A01423595 & Antonio Noguerón Bárcenas - A01423759"
+date: "24/04/2022"
+output:
+  html_document:
+    df_print: paged
+bibliography: citations.bib
+csl: apa.csl
+link-citations: yes
+---
+
+### Referente al análisis del genoma del virus *SARS-CoV-2*
+
+El *SARS-CoV-2* es un virus que causa una enfermedad respiratoria llamada enfermedad por coronavirus de 2019 (COVID-19). El *SARS-CoV-2* es un virus de la gran familia de los coronavirus. Los coronavirus infectan a seres humanos y algunos animales. La infección por el *SARS-CoV-2* en las personas se identificó por primera vez en 2019. Se piensa que este virus se transmite de una persona a otra en las gotitas que se dispersan cuando la persona infectada tose, estornuda o habla. Es posible que también se transmita por tocar una superficie con el virus y luego llevarse las manos a la boca, la nariz o los ojos, aunque esto es menos frecuente. Hay estudios de investigación en curso sobre el tratamiento de la COVID-19 y la prevención de la infección por el *SARS-CoV-2*. También se llama coronavirus 2019-nCoV, coronavirus del síndrome respiratorio agudo grave de tipo 2 y CoV-SRAG-2.
+
+Sabemos que un virus al contagiarse y replicarse numerosas veces, tiene la posibilidad de mutar y generar un cambio en su ADN. A la hora de hacer el proceso de la replicación, es posible que haya cambios a la hora de copiar el genoma de los virus de generaciones anteriores. Es decir, mientras más contagios haya, las posibilidades de tener mutaciones son mayores y se van distanciando del genoma original, ya sea para el bien del virus, o del organismo hospedante.
+
+La propuesta de este proyecto se divide en 2 etapas:
+
+**Etapa 1**: Analizar el genoma del *SARS-CoV-2* por región geográfica, comparando las mutaciones en sus genes con el genoma original de Wuhan. Es decir, recorrer el ADN del virus encontrado en distintos países, comparando la secuencia de nucleótidos contra la de Wuhan con el objetivo de encontrar mutaciones. Al detectar estas mutaciones, realizar un proceso estadístico para determinar aquellas más predominantes y hacer una breve investigación sobre las consecuencias que estas han tenido en el país o en el mundo.
+
+
+**Etapa 2**: Después de hacer los análisis de mutaciones, realizar un análisis extenso sobre las vacunaciones en los países de donde provinieron las mutaciones previamente estudiadas. Al tener ambos análisis, se busca hallar una relación entre la evolución de las mutaciones y el progreso de las vacunaciones en cada país.
+
+
+### Recursos
+
+Datasets con los nucleotidos de *SARS-CoV-2*. [@NCBIdatasets]
+
+Dataset con información sobre las vacunaciones. [@vaccines]
+ 
+
+
