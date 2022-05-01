@@ -1,7 +1,7 @@
 ---
-title: "Análisis de Biología Computacional - Propuesta de Proyecto"
+title: "Análisis de Biología Computacional - Descripción de Pasos para Proyecto de Análisis del virus Sars-Cov-2"
 author: "Annete Pamela Ruiz Abreu - A01423595 & Antonio Noguerón Bárcenas - A01423759"
-date: "24/04/2022"
+date: "05/05/2022"
 output:
   html_document:
     df_print: paged
@@ -10,19 +10,20 @@ csl: apa.csl
 link-citations: yes
 ---
 
-### Referente al análisis del genoma del virus *SARS-CoV-2*
+### Antecedentes
 
-El *SARS-CoV-2* es un virus que causa una enfermedad respiratoria llamada enfermedad por coronavirus de 2019 (COVID-19). El *SARS-CoV-2* es un virus de la gran familia de los coronavirus. Los coronavirus infectan a seres humanos y algunos animales. La infección por el *SARS-CoV-2* en las personas se identificó por primera vez en 2019. Se piensa que este virus se transmite de una persona a otra en las gotitas que se dispersan cuando la persona infectada tose, estornuda o habla. Es posible que también se transmita por tocar una superficie con el virus y luego llevarse las manos a la boca, la nariz o los ojos, aunque esto es menos frecuente. Hay estudios de investigación en curso sobre el tratamiento de la COVID-19 y la prevención de la infección por el *SARS-CoV-2*. También se llama coronavirus 2019-nCoV, coronavirus del síndrome respiratorio agudo grave de tipo 2 y CoV-SRAG-2.
+El SARS-CoV-2 es un virus que causa una enfermedad respiratoria llamada enfermedad por coronavirus de 2019 (COVID-19). El SARS-CoV-2 es un virus de la gran familia de los coronavirus. Los coronavirus infectan a seres humanos y algunos animales. La infección por el SARS-CoV-2 en las personas se identificó por primera vez en 2019. Se piensa que este virus se transmite de una persona a otra en las gotitas que se dispersan cuando la persona infectada tose, estornuda o habla. Es posible que también se transmita por tocar una superficie con el virus y luego llevarse las manos a la boca, la nariz o los ojos, aunque esto es menos frecuente. Hay estudios de investigación en curso sobre el tratamiento de la COVID-19 y la prevención de la infección por el SARS-CoV-2. También se llama coronavirus 2019-nCoV, coronavirus del síndrome respiratorio agudo grave de tipo 2 y CoV-SRAG-2.
 
 Sabemos que un virus al contagiarse y replicarse numerosas veces, tiene la posibilidad de mutar y generar un cambio en su ADN. A la hora de hacer el proceso de la replicación, es posible que haya cambios a la hora de copiar el genoma de los virus de generaciones anteriores. Es decir, mientras más contagios haya, las posibilidades de tener mutaciones son mayores y se van distanciando del genoma original, ya sea para el bien del virus, o del organismo hospedante.
 
-La propuesta de este proyecto se divide en 2 etapas:
+### Propuesta Inicial de Proyecto
+El SARS-CoV-2 es un virus que causa una enfermedad respiratoria llamada enfermedad por coronavirus de 2019 (COVID-19). El SARS-CoV-2 es un virus de la gran familia de los coronavirus. Los coronavirus infectan a seres humanos y algunos animales. La infección por el SARS-CoV-2 en las personas se identificó por primera vez en 2019. Se piensa que este virus se transmite de una persona a otra en las gotitas que se dispersan cuando la persona infectada tose, estornuda o habla. Es posible que también se transmita por tocar una superficie con el virus y luego llevarse las manos a la boca, la nariz o los ojos, aunque esto es menos frecuente. Hay estudios de investigación en curso sobre el tratamiento de la COVID-19 y la prevención de la infección por el SARS-CoV-2. También se llama coronavirus 2019-nCoV, coronavirus del síndrome respiratorio agudo grave de tipo 2 y CoV-SRAG-2.
 
-**Etapa 1**: Analizar el genoma del *SARS-CoV-2* por región geográfica, comparando las mutaciones en sus genes con el genoma original de Wuhan. Es decir, recorrer el ADN del virus encontrado en distintos países, comparando la secuencia de nucleótidos contra la de Wuhan con el objetivo de encontrar mutaciones. Al detectar estas mutaciones, realizar un proceso estadístico para determinar aquellas más predominantes y hacer una breve investigación sobre las consecuencias que estas han tenido en el país o en el mundo.
+Sabemos que un virus al contagiarse y replicarse numerosas veces, tiene la posibilidad de mutar y generar un cambio en su ADN. A la hora de hacer el proceso de la replicación, es posible que haya cambios a la hora de copiar el genoma de los virus de generaciones anteriores. Es decir, mientras más contagios haya, las posibilidades de tener mutaciones son mayores y se van distanciando del genoma original, ya sea para el bien del virus, o del organismo hospedante.
 
+**Etapa 1:** Analizar el genoma del SARS-CoV-2 por región geográfica, comparando las mutaciones en sus genes con el genoma original de Wuhan. Es decir, recorrer el ADN del virus encontrado en distintos países, comparando la secuencia de nucleótidos contra la de Wuhan con el objetivo de encontrar mutaciones. Al detectar estas mutaciones, realizar un proceso estadístico para determinar aquellas más predominantes y hacer una breve investigación sobre las consecuencias que estas han tenido en el país o en el mundo.
 
-**Etapa 2**: Después de hacer los análisis de mutaciones, realizar un análisis extenso sobre las vacunaciones en los países de donde provinieron las mutaciones previamente estudiadas. Al tener ambos análisis, se busca hallar una relación entre la evolución de las mutaciones y el progreso de las vacunaciones en cada país.
-
+**Etapa 2:** Después de hacer los análisis de mutaciones, realizar un análisis extenso sobre las vacunaciones en los países de donde provinieron las mutaciones previamente estudiadas. Al tener ambos análisis, se busca hallar una relación entre la evolución de las mutaciones y el progreso de las vacunaciones en cada país.
 
 ### Recursos
 
@@ -30,5 +31,34 @@ Datasets con los nucleotidos de *SARS-CoV-2*. [@NCBIdatasets]
 
 Dataset con información sobre las vacunaciones. [@vaccines]
  
+
+### Propuesta Final de Proyecto
+**Etapa 1:** Analizar el progreso de una de las variantes del Sars-Cov-2 a través del continente hasta llegar a México mediante el análisis de las mutaciones de esa variante. Identificar las mutaciones más importantes y recurrentes e investigar las repercusiones de esa mutación y ligarlas con las noticias (muertes) sobre el progreso del virus.
+
+PASOS
+1. Investigar el inicio, progreso, número de contagios y otros factores importantes y relevantes del COVID-19.
+2. Escoger una variante para analizar (variante de preocupación o interés).
+3. Descargar de NCBI un nucleótido de la variante que queremos analizar de cada país de interés (empezando con uno de Wuhan y, por último, uno de México).
+4. Crear un programa en R para obtener las regiones codificantes de cada nucleótido.
+5. Crear un programa en R para obtener las mutaciones y la información relevante de ellas de cada mutación de nucleótido.
+6. Hacer 2 análises de mutaciones:
+    Comparar cada nucleótido con el original de Wuhan.
+    Ir comparando los nucleótidos conforme el progreso del virus previamente investigado. Por ejemplo: Wuhan v.s China -> China v.s. Italia -> Italia v.s. Alemania.
+   Los resultados se guardarán en 2 dataframes diferentes.
+7. Hacer el gráfico de alignment si la longitud de la región codificante es igual, si no hacer el algoritmo de alineación.
+8. Crear el gráfico de barras de las mutaciones predominantes.
+9. Investigar sobre las mutaciones predominantes encontradas. Investigar el efecto de la mutación sobre el virus y el efecto del virus mutado sobre las personas.
+10. Escribir un reporte con los resultados y nuestras conclusiones.
+
+
+**Etapa 2:** Analizar algunas variantes del Sars-Cov-2 de un solo país antes, durante y después de las vacunas para identificar las mutaciones que tuvo el virus que hicieron que las vacunas se volvieran menos efectivas (antes, durante y después de la segunda, tercera o cuarta ola).
+
+PASOS
+1. Investigar el concepto, inicio, progreso de las vacunas y alguna ola de contagios de un país.
+2. Descargar de NCBI varios nucleótidos de antes, durante y después de las vacunas y de una ola de contagios.
+3. Hacer un análisis de las mutaciones de estos nucleótidos. El nucleótido “original” será el primero antes de la ola (cuando ya había vacunas).
+4. Crear el gráfico de barras de las mutaciones predominantes.
+5. Investigar sobre las mutaciones predominantes encontradas. Investigar el efecto de la mutación sobre el virus y determinar qué mutación se volvió más fuerte que las vacunas.
+6. Escribir un reporte con los resultados y nuestras conclusiones.
 
 
