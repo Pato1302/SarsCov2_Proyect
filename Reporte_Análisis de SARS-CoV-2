@@ -1,0 +1,11 @@
+---
+title: "Reto - Análisis de Sars-Cov-2"
+author: "Annete Pamela Ruiz Abreu - A01423595 & Antonio Noguerón Bárcenas - A01423759"
+date: "05/05/2022"
+output:
+  html_document:
+    df_print: paged
+bibliography: citations.bib
+csl: apa.csl
+link-citations: yes
+---
