@@ -29,6 +29,6 @@ La propuesta de este proyecto se divide en 2 etapas:
 Datasets con los nucleotidos de *SARS-CoV-2*. [@NCBIdatasets]
 
 Dataset con información sobre las vacunaciones. [@vaccines]
- 
+
 
 
