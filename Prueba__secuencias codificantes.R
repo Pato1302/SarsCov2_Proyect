@@ -33,6 +33,7 @@ longitud = nchar(ARNmensajero)
 inicios = c()
 finales = c()
 
+
 print(substr(ARNmensajero,25382,25384))
 
 ultimoindice = 0
@@ -52,6 +53,15 @@ for(i in seq(1,longitud,1)){
   }
 }
 
-print(finales)
+exones = c()
+intrones = c(substr(ARNmensajero,1,inicios[1]-1))
+
+for(i in seq(1,min(c(length(inicios),length(finales))),1)){
+  exones = append(exones,substr(ARNmensajero,inicios[i],finales[i]))
+  intrones = append(intrones,substr(ARNmensajero,finales[i]+1,inicios[i+1]-1))
+}
+
+exones
+intrones
 
 
