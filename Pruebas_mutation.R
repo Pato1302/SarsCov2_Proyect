@@ -76,4 +76,4 @@ Mutaciones = function(original, otra, g){
 }
 
 dataFrame_genS = Mutaciones(original,mexican,3)
-dataFrame_genS
+print(dataFrame_genS)
