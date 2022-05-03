@@ -14,7 +14,8 @@ df = data.frame(
   codon = character(),
   protein = character(),
   index = numeric(),
-  protein_change = logical()
+  protein_change = logical(),
+  compared_to = character()
 )
 
 abreviatura = function(codon){
@@ -45,7 +46,7 @@ adn_to_arnm = function(elemento){
   return (switch(elemento,"C"="C","G"="G","A"="A","T"="U"))
 }
 
-Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes, file_name){
+Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes, file_name, continuo){
   for (p in seq (1,length(vector_paises),1)) {
     mexican = read.fasta(paste(c(file_name,vector_paises[p],".txt"),collapse=""))
     gr = 1
@@ -93,11 +94,23 @@ Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes,
             df[nrow(df), 6] = paste(c(abreviatura(codonWuhan), abreviatura(codonMexico)), collapse = " to ")
             df[nrow(df), 7] = codonIndex
             df[nrow(df), 8] = cambio
+            
+            if (continuo) {
+              df[nrow(df), 9] = paste(c("Mexico ",p),collapse="")
+            } else {
+              df[nrow(df), 9] = "Wuhan"
+            }
           }
         }
       }
       gr = gr + 1
     }
+    
+    if (continuo) {
+      original = mexican
+    }
+    
+    
   }
   return(df)
 }
@@ -105,14 +118,19 @@ Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes,
 vector_paises = c("Francia","Tailandia","Japon","Italia","USA","Mexico")
 vector_genes_wuhan = c(3,5,6,11)
 vector_genes = c("S","E","M","N")
+vector_num_genomas = c(1,2,3)
 file_names_first = "Archivos/first_B_sequences/first_B_"
 file_names_months = "Archivos/2Meses_Despues_sequences/2Meses_Despues_"
+file_names_multiple = "Archivos/Mexico_multiple/Mexico_"
 
-dataFrame_genS = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_first)
+dataFrame_genS = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_first,FALSE)
 print(dataFrame_genS)
 
-dataFrame_2months_later = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_months)
+dataFrame_2months_later = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_months,FALSE)
 print(dataFrame_2months_later)
+
+dataFrame_mexico = Mutaciones(original,vector_num_genomas,vector_genes_wuhan,vector_genes,file_names_multiple,TRUE)
+print(dataFrame_mexico)
 
 
 
