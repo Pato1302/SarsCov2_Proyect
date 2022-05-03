@@ -37,16 +37,17 @@ abreviatura = function(codon){
                 "AUA"="I","AUC"="I","AUU"="I",
                 "AUG"="M",
                 "UGG"="W",
-                "UGC"="C","UGU"="C"))
+                "UGC"="C","UGU"="C",
+                codon))
 }
 
 adn_to_arnm = function(elemento){
   return (switch(elemento,"C"="C","G"="G","A"="A","T"="U"))
 }
 
-Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes){
+Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes, file_name){
   for (p in seq (1,length(vector_paises),1)) {
-    mexican = read.fasta(paste(c("Archivos/first_B_sequences/first_B_",vector_paises[p],".txt"),collapse=""))
+    mexican = read.fasta(paste(c(file_name,vector_paises[p],".txt"),collapse=""))
     gr = 1
     while(gr<=length(vector_genes)) {    
 
@@ -104,7 +105,14 @@ Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes)
 vector_paises = c("Francia","Tailandia","Japon","Italia","USA","Mexico")
 vector_genes_wuhan = c(3,5,6,11)
 vector_genes = c("S","E","M","N")
-dataFrame_genS = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes)
+file_names_first = "Archivos/first_B_sequences/first_B_"
+file_names_months = "Archivos/2Meses_Despues_sequences/2Meses_Despues_"
+
+dataFrame_genS = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_first)
 print(dataFrame_genS)
+
+dataFrame_2months_later = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_months)
+print(dataFrame_2months_later)
+
 
 
