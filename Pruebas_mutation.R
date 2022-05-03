@@ -157,7 +157,7 @@ Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes,
             df[nrow(df), 7] = codonIndex
             df[nrow(df), 8] = cambio
             
-            if (continuo) {
+            if (continuo && p>1) {
               df[nrow(df), 9] = paste(c("Mexico ",p),collapse="")
             } else {
               df[nrow(df), 9] = "Wuhan"
