@@ -69,12 +69,21 @@ Mutaciones = function(original, vector_paises){
           codonWuhan = paste(c(genWuhan[((codonIndex*3)-2):(codonIndex*3)]), collapse = "")
           codonMexico = paste(c(genMexico[((codonIndex*3)-2):(codonIndex*3)]), collapse = "")
           df[fila, 1] = vector_paises[p]
+          df[fila, 2] = g
           df[fila, 3] = paste(c(genWuhan[i],genMexico[i]),collapse = " to ")
           df[fila, 4] = i + length(mexican[[k-2]]) + length(mexican[[k-1]]) #Al descargar el archivo con m?ltiples secuencias, no contiene el atributo del ?ndice de inicio del gen S
           #Entonces el ?ndice que da es la suma de la longitud de los 2 genes previos y el de la regi?n codificante del gen S.
           df[fila, 5] = paste(c(codonWuhan,codonMexico), collapse = " to ") 
           df[fila, 6] = paste(c(abreviatura(codonWuhan), abreviatura(codonMexico)), collapse = " to ")
           df[fila, 7] = codonIndex
+          
+          if (abreviatura(codonWuhan)==abreviatura(codonMexico)) {
+            cambio = FALSE
+          } else {
+            cambio = TRUE
+          }
+          
+          df[fila, 8] = cambio
           fila = fila + 1
         }
       }
