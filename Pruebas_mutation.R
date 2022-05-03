@@ -44,6 +44,60 @@ adn_to_arnm = function(elemento){
   return (switch(elemento,"C"="C","G"="G","A"="A","T"="U"))
 }
 
+Alineacion = function(A,B){
+  m <- matrix(data = 0, nrow = length(B)+1, ncol = length(A)+1)
+  m[1, ] = seq(0,length(A)*-2,-2)
+  m[ , 1] = seq(0,length(B)*-2,-2)
+  m
+  
+  for (fila in seq(2,length(B)+1)){
+    for (col in seq(2,length(A)+1)){
+      m[fila, col] = CalcularPeso(A,B,fila, col, m)
+    }
+  }
+  
+  #back-trace
+  
+  iFila = length(B) + 1
+  iColumna = length(A) + 1
+  A_res = c()
+  B_res = c()
+  
+  while (iFila != 1 && iColumna != 1){
+    if(A[iColumna-1] == B[iFila-1]){
+      A_res = append(A_res,A[iColumna-1])
+      B_res = append(B_res,A[iColumna-1])
+      iColumna = iColumna - 1
+      iFila = iFila - 1
+    } else {
+      if(m[iFila, iColumna-1] > m[iFila-1, iColumna]){
+        A_res = append(A_res, A[iColumna-1])
+        B_res = append(B_res, "-")
+        iColumna = iColumna - 1
+      } else { 
+        A_res = append(A_res, "-")
+        B_res = append(B_res, B[iFila-1])
+        iFila = iFila - 1
+      }
+    }
+  }
+  resultado = c(rev(A_res),rev(B_res))
+  return(resultado)
+}
+
+CalcularPeso = function(A, B, fila,col,m){
+  if(A[col-1] == B[fila-1]){
+    diagonal = m[fila-1,col-1] + 1
+  } else {
+    diagonal = m[fila-1,col-1] - 1
+  }
+  up = m[fila-1, col] -2
+  left = m[fila, col-1] -2
+  peso = max(diagonal,up,left)
+  return(peso)
+}
+
+
 Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes){
   for (p in seq (1,length(vector_paises),1)) {
     mexican = read.fasta(paste(c("Archivos/first_B_sequences/first_B_",vector_paises[p],".txt"),collapse=""))
@@ -68,10 +122,19 @@ Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes)
       }
       
       
-      for(k in seq(g,length(mexican),12)){ #g+12 por que en la espícula del primer registro hay una inserción y el df tiene más de 2000 filas
+      for(k in seq(g,length(mexican),12)){
         genMexico = mexican[[k]]      
         genMexico = toupper(genMexico)
         genMexico = as.vector(sapply(genMexico,adn_to_arnm))
+        
+        #Check if there is an insertion or deletion mutation
+        if(length(genMexico)!=length(genWuhan)){
+           genesAlineados = Alineacion(genWuhan,genMexico)
+           genWuhan = genesAlineados[1]
+           genMexico = genesAlineados[2]
+         }
+        
+        
         for(i in seq(1, min(c(length(genMexico), length(genWuhan))), 1)){
           if(genWuhan[i] != genMexico[i]){
             codonIndex = as.integer((i) %/% 3) + 1 
