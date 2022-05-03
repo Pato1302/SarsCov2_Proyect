@@ -5,7 +5,7 @@ cat("\f")
 library(seqinr)
 
 original = read.fasta("Archivos/Wuhan_coding_sequences.txt")
-mexican = read.fasta("Archivos/mexican_multiple_coding_sequence.fasta")
+mexican = read.fasta("Archivos/first_B_sequences/first_B_USA.txt")
 
 
 abreviatura = function(codon){
@@ -37,11 +37,14 @@ adn_to_arnm = function(elemento){
 
 Mutaciones = function(original, otra, g){
   df = data.frame(
+    pais = character(),
+    gen = character(),
     mutation = character(),
     nucleo = numeric(),
     codon = character(),
     protein = character(),
-    index = numeric()
+    index = numeric(),
+    protein_change = logical()
   )
   
   genWuhan = original[[g]]
@@ -50,22 +53,23 @@ Mutaciones = function(original, otra, g){
   
   fila = 1
   
-  for(k in seq(g+12,length(mexican),12)){ #g+12 por que en la espícula del primer registro hay una inserción y el df tiene más de 2000 filas
+  for(k in seq(g,length(mexican),12)){ #g+12 por que en la espícula del primer registro hay una inserción y el df tiene más de 2000 filas
     genMexico = mexican[[k]];      
     genMexico = toupper(genMexico)
     genMexico = as.vector(sapply(genMexico,adn_to_arnm))
-    
+    print(length(genMexico))
+    print(length(genWuhan))
     for(i in seq(1, min(c(length(genMexico), length(genWuhan))), 1)){
       if(genWuhan[i] != genMexico[i]){
         codonIndex = as.integer((i) %/% 3) + 1 
         codonWuhan = paste(c(genWuhan[((codonIndex*3)-2):(codonIndex*3)]), collapse = "")
         codonMexico = paste(c(genMexico[((codonIndex*3)-2):(codonIndex*3)]), collapse = "")
-        df[fila, 1] = paste(c(genWuhan[i],genMexico[i]),collapse = " to ")
-        df[fila, 2] = i + length(mexican[[k-2]]) + length(mexican[[k-1]]) #Al descargar el archivo con m?ltiples secuencias, no contiene el atributo del ?ndice de inicio del gen S
+        df[fila, 3] = paste(c(genWuhan[i],genMexico[i]),collapse = " to ")
+        df[fila, 4] = i + length(mexican[[k-2]]) + length(mexican[[k-1]]) #Al descargar el archivo con m?ltiples secuencias, no contiene el atributo del ?ndice de inicio del gen S
         #Entonces el ?ndice que da es la suma de la longitud de los 2 genes previos y el de la regi?n codificante del gen S.
-        df[fila, 3] = paste(c(codonWuhan,codonMexico), collapse = " to ") 
-        df[fila, 4] = paste(c(abreviatura(codonWuhan), abreviatura(codonMexico)), collapse = " to ")
-        df[fila, 5] = codonIndex
+        df[fila, 5] = paste(c(codonWuhan,codonMexico), collapse = " to ") 
+        df[fila, 6] = paste(c(abreviatura(codonWuhan), abreviatura(codonMexico)), collapse = " to ")
+        df[fila, 7] = codonIndex
         fila = fila + 1
       }
     }
