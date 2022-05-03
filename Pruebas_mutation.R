@@ -44,66 +44,67 @@ adn_to_arnm = function(elemento){
   return (switch(elemento,"C"="C","G"="G","A"="A","T"="U"))
 }
 
-Mutaciones = function(original, vector_paises){
+Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes){
   for (p in seq (1,length(vector_paises),1)) {
     mexican = read.fasta(paste(c("Archivos/first_B_sequences/first_B_",vector_paises[p],".txt"),collapse=""))
-    genWuhan = original[[3]]
-    genWuhan = toupper(genWuhan)
-    genWuhan = as.vector(sapply(genWuhan,adn_to_arnm))
-    
-    
-    for (find_gen in seq(1,12,1)) {
-      genMexico = mexican[[find_gen]]
-      attr1 = attr(genMexico,"Annot")
-      vec = unlist(strsplit(attr1,"\\[|\\]|:|=|\\."))
-      gen = vec[which(vec=="gene")+1]
-      if (gen=="S") {
-        g = find_gen
-        inicio = as.integer(vec[which(vec=="location")+1])-1
-        break
-      }
-    }
-    
-    
-    fila = 1
-    
-    for(k in seq(g,length(mexican),12)){ #g+12 por que en la espícula del primer registro hay una inserción y el df tiene más de 2000 filas
-      genMexico = mexican[[k]]      
-      genMexico = toupper(genMexico)
-      genMexico = as.vector(sapply(genMexico,adn_to_arnm))
-      for(i in seq(1, min(c(length(genMexico), length(genWuhan))), 1)){
-        if(genWuhan[i] != genMexico[i]){
-          codonIndex = as.integer((i) %/% 3) + 1 
-          codonWuhan = paste(c(genWuhan[((codonIndex*3)-2):(codonIndex*3)]), collapse = "")
-          codonMexico = paste(c(genMexico[((codonIndex*3)-2):(codonIndex*3)]), collapse = "")
-          
-          if (abreviatura(codonWuhan)==abreviatura(codonMexico)) {
-            cambio = FALSE
-          } else {
-            cambio = TRUE
-          }
-          
-          df[fila, 1] = vector_paises[p]
-          df[fila, 2] = gen
-          df[fila, 3] = paste(c(genWuhan[i],genMexico[i]),collapse = " to ")
-          df[fila, 4] = i + inicio
-          df[fila, 5] = paste(c(codonWuhan,codonMexico), collapse = " to ") 
-          df[fila, 6] = paste(c(abreviatura(codonWuhan), abreviatura(codonMexico)), collapse = " to ")
-          df[fila, 7] = codonIndex
-          df[fila, 8] = cambio
-          fila = fila + 1
+    gr = 1
+    while(gr<=length(vector_genes)) {    
+
+      genWuhan = original[[vector_genes_wuhan[gr]]]
+      genWuhan = toupper(genWuhan)
+      genWuhan = as.vector(sapply(genWuhan,adn_to_arnm))
+      
+      
+      for (find_gen in seq(1,12,1)) {
+        genMexico = mexican[[find_gen]]
+        attr1 = attr(genMexico,"Annot")
+        vec = unlist(strsplit(attr1,"\\[|\\]|:|=|\\."))
+        gen = vec[which(vec=="gene")+1]
+        if (gen==vector_genes[gr]) {
+          g = find_gen
+          inicio = as.integer(vec[which(vec=="location")+1])-1
+          break
         }
       }
-      df[fila, ] = ""   #Dejamos un espacio entre cada genoma para facilitar la visualización
-      fila = fila + 1
+      
+      
+      for(k in seq(g,length(mexican),12)){ #g+12 por que en la espícula del primer registro hay una inserción y el df tiene más de 2000 filas
+        genMexico = mexican[[k]]      
+        genMexico = toupper(genMexico)
+        genMexico = as.vector(sapply(genMexico,adn_to_arnm))
+        for(i in seq(1, min(c(length(genMexico), length(genWuhan))), 1)){
+          if(genWuhan[i] != genMexico[i]){
+            codonIndex = as.integer((i) %/% 3) + 1 
+            codonWuhan = paste(c(genWuhan[((codonIndex*3)-2):(codonIndex*3)]), collapse = "")
+            codonMexico = paste(c(genMexico[((codonIndex*3)-2):(codonIndex*3)]), collapse = "")
+            
+            if (abreviatura(codonWuhan)==abreviatura(codonMexico)) {
+              cambio = FALSE
+            } else {
+              cambio = TRUE
+            }
+            
+            df[nrow(df)+1, 1] = vector_paises[p]
+            df[nrow(df), 2] = gen
+            df[nrow(df), 3] = paste(c(genWuhan[i],genMexico[i]),collapse = " to ")
+            df[nrow(df), 4] = i + inicio
+            df[nrow(df), 5] = paste(c(codonWuhan,codonMexico), collapse = " to ") 
+            df[nrow(df), 6] = paste(c(abreviatura(codonWuhan), abreviatura(codonMexico)), collapse = " to ")
+            df[nrow(df), 7] = codonIndex
+            df[nrow(df), 8] = cambio
+          }
+        }
+      }
+      gr = gr + 1
     }
   }
   return(df)
 }
 
 vector_paises = c("Francia","Tailandia","Japon","Italia","USA","Mexico")
-
-dataFrame_genS = Mutaciones(original,vector_paises)
+vector_genes_wuhan = c(3,5,6,11)
+vector_genes = c("S","E","M","N")
+dataFrame_genS = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes)
 print(dataFrame_genS)
 
 
