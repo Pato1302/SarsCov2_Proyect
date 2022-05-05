@@ -4,6 +4,8 @@ cat("\f")
 
 library(seqinr)
 library(ggplot2)
+library(dplyr)
+library(tidyverse)
 
 original = read.fasta("Archivos/Wuhan_coding_sequences.txt")
 
@@ -212,6 +214,28 @@ graficar(dataFrame_2months_later,dataFrame_2months_later$mutation, "Mutaciones d
 graficar(dataFrame_2months_later,dataFrame_2months_later$protein, "Cambios de aminoácidos (2 meses después)","Cambio","Frecuencia","Cambios")
 
 graficar(dataFrame_mexico,dataFrame_mexico$mutation, "Mutaciones de Sustitución (México)","Mutación","Frecuencia","Mutaciones")
-graficar(dataFrame_mexico,dataFrame_mexico$protein, "Cambios de aminoácidos (México)","Cambio","Frecuencia","Cambios")
+
+#Graficar solo las 20 columnas con más frecuencia
+df2 = filter(
+  summarise(
+    select(
+      group_by(dataFrame_mexico, protein),
+    ),
+    count = n()
+  ),
+  count > 0
+)
+df2
+df2 = df2[order(-df2$count), ]
+df2 = df2[1:20, ]
+df2
+
+p = ggplot(df2)
+p = p + aes(x=reorder(protein,-count), y=count, fill=protein, label=count)
+p = p + ggtitle("Cambios de aminoácidos en México (primeras 20 columnas)")
+p = p + labs(x="Cambio", y="Frecuencia", fill="Cambios")
+p = p + geom_bar(stat = "identity") 
+p = p + geom_text(stat = "identity", vjust = 1)
+p
 
 
