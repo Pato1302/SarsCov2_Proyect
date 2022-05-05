@@ -1,6 +1,8 @@
 ---
 title: "Reporte del Reto - Análisis de SARS-CoV-2"
 author: "Anette Pamela Ruiz Abreu, Antonio Noguerón Bárcenas & Patricio Álvarez Hernández"
+date: "4 de mayo de 2022"
+fontsize: 12pt
 output:
   html_document:
     df_print: paged
@@ -12,7 +14,17 @@ editor_options:
     wrap: sentence
 ---
 
-### Antecedentes:
+### Introducción: 
+
+A finales de 2019 la ciudad de Wuhan, en la provincia de Hubei (una ciudad de China con más de 11 millones de habitantes), se convirtió en el centro de una epidemia de neumonía de causa desconocida con implicaciones globales.
+
+En enero de 2020, la Organización Mundial de la Salud (OMS) declaró el brote de la enfermedad por el nuevo coronavirus SARS-CoV-2 (COVID-19) como una emergencia de salud pública de importancia internacional. En marzo de 2020, caracterizó el COVID-19 como una pandemia. Desde entonces la OMS y las autoridades de salud pública de todo el mundo están actuando para contener el brote, que ha implicado desafíos antes impensados para las personas, las comunidades y las instituciones.
+
+Esta pandemia puede ser considerada como el primer gran impacto de repercusión planetaria en la historia reciente del mundo globalizado. Aunque sus efectos en materia de salud pública están siendo superlativos, también lo son en todos los demás ámbitos de la vida pública y privada, individual y colectiva. Como es el caso en la mayoría de los procesos naturales, sus oportunidades o contingencias asociadas dependen del modelo de desarrollo en el que se produzcan. Con la pandemia, esto se ha puesto más en evidencia.
+
+Se sabe que las pruebas serológicas son una herramienta muy útil para confirmar la infección por un patógeno en la población y, combinadas con datos epidemiológicos y clínicos, permiten estimar la gravedad y la transmisibilidad del patógeno e identificar los grupos de población que han sido infectados, así como aquellos que siguen siendo susceptibles.  Por ello, cada vez más requerimos datos moleculares como las secuencias de ácidos nucleicos de los virus para conocer su origen y potencialidad epidemiológica.
+
+### Problema:
 
 El SARS-CoV-2 es un virus que causa una enfermedad respiratoria llamada enfermedad por coronavirus de 2019 (COVID-19).
 El SARS-CoV-2 es un virus de la gran familia de los coronavirus.
@@ -27,9 +39,53 @@ Sabemos que un virus al contagiarse y replicarse numerosas veces, tiene la posib
 A la hora de hacer el proceso de la replicación, es posible que haya cambios a la hora de copiar el genoma de los virus de generaciones anteriores.
 Es decir, mientras más contagios haya, las posibilidades de tener mutaciones son mayores y se van distanciando del genoma original, ya sea para el bien del virus, o del organismo hospedante.
 
+Sabemos que el SARS-CoV-2 es un virus increíblemente contagioso y peligroso. Un año después de que empezó la pandemia, se empezaron a crear y distribuir vacunas; sin embargo, el virus no desapareció y la pandemia persistió gracias a que había personas que no querían vacunarse o no había suficientes vacunas para la población. El virus empezó a mutar y se volvió más resistente a las primeras vacunas.
+
+Es gracias a estas mutaciones que han surgido variantes de preocupación como Delta y Omicrón. Una variante es un código genético que puede tener una o más mutaciones, y una de preocupación es aquella que puede ser más transmisible, mortal, y que además, puede poner en riesgo la efectividad de las herramientas médicas actuales para combatir al virus.
+
+### Antecedentes:
+
+####**Cronología del Covid:**
+
+##### **31 de diciembre de 2019**
+La Oficina de la OMS en la República Popular China detecta una declaración de la Comisión Municipal de Salud de Wuhan para los medios de comunicación publicada en su sitio web en la que se mencionan casos de una «neumonía vírica» en Wuhan (República Popular China).
+
+##### **13 de enero de 2020**
+El Ministro de Salud Pública de Tailandia notifica un caso del nuevo coronavirus confirmado en laboratorio importado desde Wuhan, el primer caso registrado fuera de la República Popular China.
+
+##### **16 de enero de 2020**
+El Ministerio de Salud, Trabajo y Bienestar del Japón notifica a la OMS un caso confirmado de infección por el nuevo coronavirus en una persona que había viajado a Wuhan. Es el segundo caso confirmado detectado fuera de la República Popular China.
+
+##### **21 de enero de 2020**
+Los Estados Unidos de América (EE.UU.) notifican su primer caso confirmado de infección por el nuevo coronavirus. Se trata del primer caso en la Región de las Américas de la OMS. El hombre había viajado a Wuhan.
+
+##### **24 de enero de 2020**
+Francia notifica a la OMS tres casos de infección por el nuevo coronavirus, todos de personas que habían viajado desde Wuhan. Se trata de los primeros casos confirmados en la Región de Europa de la OMS (EURO).
+
+##### **29 de enero de 2020**
+Los Emiratos Árabes Unidos notifican los primeros casos en la Región del Mediterráneo Oriental.
+
+##### **14 de febrero de 2022**
+Egipto anuncia su primer caso de coronavirus de Wuhan, según un comunicado conjunto del Ministerio de Salud de Egipto y la OMS. Es el primer caso confirmado en África desde que se detectó el virus.
+
+##### **25 de febrero de 2020**
+Confirmación del primer caso en la Región de África de la OMS, en Argelia. Este caso llega después de la notificación previa de un caso en Egipto, el primero en el continente africano. Fue un hombre que había viajado a Italia.
+
+##### **28 de febrero de 2022**
+El primer caso fue detectado en Ciudad de México. Un hombre de 35 años que había visitado recientemente el norte de Italia.
+
+
 ### Propuesta:
 
 Analizar el progreso de una de las variantes del SARS-CoV-2 a través del mundo hasta llegar a México; esto mediante el análisis de las mutaciones de la variante en distintos genomas recopilados en distintos países. Al identificar las mutaciones más relevantes y recurrentes, investigar las repercusiones de las mutaciones y ligarlas con las noticias sobre el progreso del virus.
+
+### Hipótesis:
+
+#### Hipótesis 1:
+El virus original del SARS-CoV-2 de Wuhan no sufrió ninguna mutación en sus genes más importantes (S, E, M, N) al propagarse a los siguientes países de interés: Estados Unidos, México, Italia, Japón, Tailandia y Francia.
+
+#### Hipótesis 2:
+Analizando el virus 2 meses después de haber llegado a los países de interés, tendrá una cantidad más significante de mutaciones, incluso llegando a crear nuevas variantes del virus.
 
 ### Proceso:
 
