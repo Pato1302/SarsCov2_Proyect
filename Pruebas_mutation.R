@@ -5,7 +5,6 @@ cat("\f")
 library(seqinr)
 library(ggplot2)
 library(dplyr)
-library(tidyverse)
 
 original = read.fasta("Archivos/Wuhan_coding_sequences.txt")
 
@@ -199,13 +198,10 @@ file_names_months = "Archivos/2Meses_Despues_sequences/2Meses_Despues_"
 file_names_multiple = "Archivos/Mexico_multiple/Mexico_"
 
 dataFrame_genS = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_first,FALSE)
-print(dataFrame_genS)
 
 dataFrame_2months_later = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_months,FALSE)
-print(dataFrame_2months_later)
 
 dataFrame_mexico = Mutaciones(original,vector_num_genomas,vector_genes_wuhan,vector_genes,file_names_multiple,TRUE)
-print(dataFrame_mexico)
 
 graficar(dataFrame_genS,dataFrame_genS$mutation, "Mutaciones de Sustitución (Primeros Casos)","Mutación","Frecuencia","Mutaciones")
 graficar(dataFrame_genS,dataFrame_genS$protein, "Cambios de aminoácidos (Primeros Casos)","Cambio","Frecuencia","Cambios")
@@ -225,10 +221,8 @@ df2 = filter(
   ),
   count > 0
 )
-df2
 df2 = df2[order(-df2$count), ]
 df2 = df2[1:20, ]
-df2
 
 p = ggplot(df2)
 p = p + aes(x=reorder(protein,-count), y=count, fill=protein, label=count)
@@ -238,4 +232,6 @@ p = p + geom_bar(stat = "identity")
 p = p + geom_text(stat = "identity", vjust = 1)
 p
 
-
+print(dataFrame_genS)
+print(dataFrame_2months_later)
+print(dataFrame_mexico)
