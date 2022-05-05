@@ -91,9 +91,23 @@ El primer caso fue detectado en Ciudad de México. Un hombre de 35 años que hab
 ![](Archivos/Image1.jpeg)
 ![](Archivos/Image2.jpeg)
 ![](Archivos/Image3.jpeg)
+
 ![](Archivos/Image5.jpeg)
 ![](Archivos/Image6.jpeg)
 
+
+
+### Propuesta:
+
+Analizar el progreso de una de las variantes del SARS-CoV-2 a través del mundo hasta llegar a México; esto mediante el análisis de las mutaciones de la variante en distintos genomas recopilados en distintos países. Al identificar las mutaciones más relevantes y recurrentes, investigar las repercusiones de las mutaciones y ligarlas con las noticias sobre el progreso del virus.
+
+### Hipótesis:
+
+#### Hipótesis 1:
+El virus original del SARS-CoV-2 de Wuhan no sufrió ninguna mutación en sus genes más importantes (S, E, M, N) al propagarse a los siguientes países de interés: Estados Unidos, México, Italia, Japón, Tailandia y Francia.
+
+#### Hipótesis 2:
+El virus 2 meses después de haber llegado a los países de interés, tendrá una cantidad más significante de mutaciones, incluso llegando a crear nuevas variantes del virus.
 
 
 ### Proceso:
