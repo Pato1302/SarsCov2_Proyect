@@ -384,6 +384,7 @@ p = p + geom_text(stat = "identity", vjust = 1)
 p
 
 ```
+
 Aquí podemos ver un poco de la investigación realizada sobre las primeras mutaciones encontradas con el análisis
 
 ![](Archivos/Image4.jpeg)
