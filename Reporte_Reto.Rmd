@@ -43,6 +43,20 @@ Sabemos que el SARS-CoV-2 es un virus increíblemente contagioso y peligroso. Un
 
 Es gracias a estas mutaciones que han surgido variantes de preocupación como Delta y Omicrón. Una variante es un código genético que puede tener una o más mutaciones, y una de preocupación es aquella que puede ser más transmisible, mortal, y que además, puede poner en riesgo la efectividad de las herramientas médicas actuales para combatir al virus.
 
+
+### Propuesta:
+
+Analizar el progreso de una de las variantes del SARS-CoV-2 a través del mundo hasta llegar a México; esto mediante el análisis de las mutaciones de la variante en distintos genomas recopilados en distintos países. Al identificar las mutaciones más relevantes y recurrentes, investigar las repercusiones de las mutaciones y ligarlas con las noticias sobre el progreso del virus.
+
+### Hipótesis:
+
+#### Hipótesis 1:
+El virus original del SARS-CoV-2 de Wuhan no sufrió ninguna mutación en sus genes más importantes (S, E, M, N) al propagarse a los siguientes países de interés: Estados Unidos, México, Italia, Japón, Tailandia y Francia.
+
+#### Hipótesis 2:
+Analizando el virus 2 meses después de haber llegado a los países de interés, tendrá una cantidad más significante de mutaciones, incluso llegando a crear nuevas variantes del virus.
+
+
 ### Antecedentes:
 
 #### **Cronología del Covid:**
@@ -77,20 +91,8 @@ El primer caso fue detectado en Ciudad de México. Un hombre de 35 años que hab
 ![](Archivos/Image1.jpeg)
 ![](Archivos/Image2.jpeg)
 ![](Archivos/Image3.jpeg)
-
-
-
-### Propuesta:
-
-Analizar el progreso de una de las variantes del SARS-CoV-2 a través del mundo hasta llegar a México; esto mediante el análisis de las mutaciones de la variante en distintos genomas recopilados en distintos países. Al identificar las mutaciones más relevantes y recurrentes, investigar las repercusiones de las mutaciones y ligarlas con las noticias sobre el progreso del virus.
-
-### Hipótesis:
-
-#### Hipótesis 1:
-El virus original del SARS-CoV-2 de Wuhan no sufrió ninguna mutación en sus genes más importantes (S, E, M, N) al propagarse a los siguientes países de interés: Estados Unidos, México, Italia, Japón, Tailandia y Francia.
-
-#### Hipótesis 2:
-Analizando el virus 2 meses después de haber llegado a los países de interés, tendrá una cantidad más significante de mutaciones, incluso llegando a crear nuevas variantes del virus.
+![](Archivos/Image5.jpeg)
+![](Archivos/Image6.jpeg)
 
 
 
@@ -382,5 +384,39 @@ p = p + geom_text(stat = "identity", vjust = 1)
 p
 
 ```
+Aquí podemos ver un poco de la investigación realizada sobre las primeras mutaciones encontradas con el análisis
+
 ![](Archivos/Image4.jpeg)
 
+### Datasets:
+
+2019-12 - Genoma Original Wuhan: https://www.ncbi.nlm.nih.gov/nuccore/NC_045512
+
+2020-01-22 - Primer Genoma B Estados Unidos: https://www.ncbi.nlm.nih.gov/nuccore/MN994468
+2020-03-25 - Primer Genoma B.1 México: https://www.ncbi.nlm.nih.gov/nuccore/MT810786
+2020-01-30 - Primer Genoma B Italia: https://www.ncbi.nlm.nih.gov/nuccore/MT509662
+2020-01 - Primer Genoma B Japón: https://www.ncbi.nlm.nih.gov/nuccore/LC529905
+2020-01-08 - Primer Genoma B Tailandia: https://www.ncbi.nlm.nih.gov/nuccore/MT447155
+2020-03 - Primer Genoma B Francia: https://www.ncbi.nlm.nih.gov/nuccore/MT470129
+
+2020-03-30 - Genoma B Dos Meses Después Estados Unidos: https://www.ncbi.nlm.nih.gov/nuccore/MT772557
+2020-03-30 - Genoma B.1 Dos Meses Después México: https://www.ncbi.nlm.nih.gov/nuccore/OK435602
+2020-03-23 - Genoma B.1 Dos Meses Después Italia: https://www.ncbi.nlm.nih.gov/nuccore/MT509655
+2020-03 - Genoma B Dos Meses Después Japón: https://www.ncbi.nlm.nih.gov/nuccore/LC542809
+2020-03-03 - Genoma B Dos Meses Después Tailandia: https://www.ncbi.nlm.nih.gov/nuccore/MT781414
+2020-03 - Genoma B Dos Meses Después Francia: https://www.ncbi.nlm.nih.gov/nuccore/MT470129
+
+
+2021-05-01 - Genoma A.2.5 México: https://www.ncbi.nlm.nih.gov/nuccore/ON316653
+2020-05-15 - Genoma B.1 México: https://www.ncbi.nlm.nih.gov/nuccore/OM000280
+2020-05-30 - Genoma B.1.595 México: https://www.ncbi.nlm.nih.gov/nuccore/OM181179
+
+### Bibliografía:
+
+Word Health Organization. (2020). WHO Statement regarding cluster of pneumonia cases in Wuhan, China. Recuperado de: https://www.who.int/china/news/detail/09-01-2020-who-statement-regarding-cluster-of-pneumonia-cases-in-wuhan-china
+
+Word Health Organization. (2020). WHO Director-General's remarks at the media briefing on 2019-nCoV on 11 February 2020. Recuperado de: https://www.who.int/dg/speeches/detail/who-director-general-s-remarks-at-the-media-briefing-on-2019-ncov-on-11-february-2020
+
+COVID-19: Problemas sociales y psicológicos en la pandemia. (2020, 16 diciembre). UNESCO. Recuperado 30 de abril de 2022, de https://es.unesco.org/news/covid-19-problemas-sociales-y-psicologicos-pandemia#:%7E:text=Ella%20constituye%20una%20situaci%C3%B3n%20disruptiva,de%20bienes%2C%20o%20del%20empleo.
+
+Cronología de la respuesta de la OMS a la COVID-19‎. (2020, 29 junio). Organización Mundial de la Salud. Recuperado 30 de abril de 2022, de https://www.who.int/es/news/item/29-06-2020-covidtimeline
