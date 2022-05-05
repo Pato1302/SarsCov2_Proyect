@@ -3,6 +3,7 @@
 cat("\f")
 
 library(seqinr)
+library(ggplot2)
 
 original = read.fasta("Archivos/Wuhan_coding_sequences.txt")
 
@@ -177,6 +178,16 @@ Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes,
   return(df)
 }
 
+graficar = function(df,columna,titulo,xlabel,ylabel,llenado){
+  p = ggplot(df)
+  p = p + aes(x=reorder(factor(columna),columna, function(x) -length(x)), fill = columna, label = after_stat(count))
+  p = p + ggtitle(titulo)
+  p = p + labs(x=xlabel, y = ylabel, fill = llenado)
+  p = p + geom_bar(stat = "count")
+  p = p + geom_text(stat = "count", vjust = 1)
+  p
+}
+
 vector_paises = c("Francia","Tailandia","Japon","Italia","USA","Mexico")
 vector_genes_wuhan = c(3,5,6,11)
 vector_genes = c("S","E","M","N")
@@ -194,5 +205,13 @@ print(dataFrame_2months_later)
 dataFrame_mexico = Mutaciones(original,vector_num_genomas,vector_genes_wuhan,vector_genes,file_names_multiple,TRUE)
 print(dataFrame_mexico)
 
+graficar(dataFrame_genS,dataFrame_genS$mutation, "Mutaciones de Sustitución (Primeros Casos)","Mutación","Frecuencia","Mutaciones")
+graficar(dataFrame_genS,dataFrame_genS$protein, "Cambios de aminoácidos (Primeros Casos)","Cambio","Frecuencia","Cambios")
+
+graficar(dataFrame_2months_later,dataFrame_2months_later$mutation, "Mutaciones de Sustitución (2 meses después)","Mutación","Frecuencia","Mutaciones")
+graficar(dataFrame_2months_later,dataFrame_2months_later$protein, "Cambios de aminoácidos (2 meses después)","Cambio","Frecuencia","Cambios")
+
+graficar(dataFrame_mexico,dataFrame_mexico$mutation, "Mutaciones de Sustitución (México)","Mutación","Frecuencia","Mutaciones")
+graficar(dataFrame_mexico,dataFrame_mexico$protein, "Cambios de aminoácidos (México)","Cambio","Frecuencia","Cambios")
 
 
