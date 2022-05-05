@@ -132,6 +132,8 @@ Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes,
         
         
         for(i in seq(1, min(c(length(genMexico), length(genWuhan))), 1)){
+          
+          
           if(genWuhan[i] != genMexico[i]){
             codonIndex = as.integer((i) %/% 3) + 1 
             codonWuhan = paste(c(genWuhan[((codonIndex*3)-2):(codonIndex*3)]), collapse = "")
@@ -189,6 +191,8 @@ vector_num_genomas = c(1,2,3)
 file_names_first = "Archivos/first_B_sequences/first_B_"
 file_names_months = "Archivos/2Meses_Despues_sequences/2Meses_Despues_"
 file_names_multiple = "Archivos/Mexico_multiple/Mexico_"
+
+mexico1 = read.fasta("Archivos/Secuencias_Mexico/sequence_1.txt")
 
 dataFrame_genS = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_first,FALSE)
 
