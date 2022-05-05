@@ -45,7 +45,7 @@ Es gracias a estas mutaciones que han surgido variantes de preocupación como De
 
 ### Antecedentes:
 
-####**Cronología del Covid:**
+#### **Cronología del Covid:**
 
 ##### **31 de diciembre de 2019**
 La Oficina de la OMS en la República Popular China detecta una declaración de la Comisión Municipal de Salud de Wuhan para los medios de comunicación publicada en su sitio web en la que se mencionan casos de una «neumonía vírica» en Wuhan (República Popular China).
@@ -74,6 +74,11 @@ Confirmación del primer caso en la Región de África de la OMS, en Argelia. Es
 ##### **28 de febrero de 2020**
 El primer caso fue detectado en Ciudad de México. Un hombre de 35 años que había visitado recientemente el norte de Italia.
 
+![](Archivos/Image1.jpeg)
+![](Archivos/Image2.jpeg)
+![](Archivos/Image3.jpeg)
+
+
 
 ### Propuesta:
 
@@ -86,6 +91,8 @@ El virus original del SARS-CoV-2 de Wuhan no sufrió ninguna mutación en sus ge
 
 #### Hipótesis 2:
 Analizando el virus 2 meses después de haber llegado a los países de interés, tendrá una cantidad más significante de mutaciones, incluso llegando a crear nuevas variantes del virus.
+
+
 
 ### Proceso:
 
@@ -375,5 +382,5 @@ p = p + geom_text(stat = "identity", vjust = 1)
 p
 
 ```
-
+![](Archivos/Image4.jpeg)
 
