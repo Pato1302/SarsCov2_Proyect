@@ -130,13 +130,6 @@ Mutaciones = function(original, vector_paises, vector_genes_wuhan, vector_genes,
         genMexico = toupper(genMexico)
         genMexico = as.vector(sapply(genMexico,adn_to_arnm))
         
-        #Check if there is an insertion or deletion mutation
-        if(length(genMexico)!=length(genWuhan)){
-           genesAlineados = Alineacion(genWuhan,genMexico)
-           genWuhan = genesAlineados[1]
-           genMexico = genesAlineados[2]
-         }
-        
         
         for(i in seq(1, min(c(length(genMexico), length(genWuhan))), 1)){
           if(genWuhan[i] != genMexico[i]){
@@ -202,6 +195,7 @@ dataFrame_genS = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_gen
 dataFrame_2months_later = Mutaciones(original,vector_paises,vector_genes_wuhan,vector_genes,file_names_months,FALSE)
 
 dataFrame_mexico = Mutaciones(original,vector_num_genomas,vector_genes_wuhan,vector_genes,file_names_multiple,TRUE)
+
 
 graficar(dataFrame_genS,dataFrame_genS$mutation, "Mutaciones de Sustitución (Primeros Casos)","Mutación","Frecuencia","Mutaciones")
 graficar(dataFrame_genS,dataFrame_genS$protein, "Cambios de aminoácidos (Primeros Casos)","Cambio","Frecuencia","Cambios")
