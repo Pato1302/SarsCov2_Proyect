@@ -389,6 +389,11 @@ Aquí podemos ver un poco de la investigación realizada sobre las primeras muta
 
 ![](Archivos/Image4.jpeg)
 
+### Conclusiones:
+
+
+
+
 ### Datasets:
 
 2019-12 - Genoma Original Wuhan: https://www.ncbi.nlm.nih.gov/nuccore/NC_045512
