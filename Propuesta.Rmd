@@ -55,13 +55,11 @@ Al tener ambos análisis, se busca hallar una relación entre la evolución de l
 Datasets con los nucleotidos de *SARS-CoV-2*.
 [@NCBIdatasets]
 
-<<<<<<< HEAD
 Dataset con información sobre las vacunaciones. [@vaccines]
 
 =======
 Dataset con información sobre las vacunaciones.
 [@vaccines]
->>>>>>> 576d6f136a91b6ac540bc8987c775b0dac670df3
 
 ### Propuesta Final de Proyecto
 
