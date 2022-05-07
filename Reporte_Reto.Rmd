@@ -6,6 +6,7 @@ fontsize: 12pt
 output:
   html_document:
     df_print: paged
+  pdf_document:
 bibliography: citations.bib
 csl: apa.csl
 link-citations: yes
@@ -13,6 +14,8 @@ editor_options:
   markdown: 
     wrap: sentence
 ---
+### Repositorio:
+[GitHub Repository](https://github.com/TonyNogueron/sars-cov-2-analysis)
 
 ### Introducción: 
 
@@ -391,17 +394,13 @@ Aquí podemos ver un poco de la investigación realizada sobre las primeras muta
 
 ### Conclusiones:
 
-<<<<<<< HEAD
-
-=======
-En conclusion, podemos observar que nuestras dos hipótesis son correctas. Al analizar los primeros genomas de cada país, podemos ver que no existen mutaciones en ellas. Las únicas mutaciones que vemos en la tabla es una de Japón y dos de México. Tras nuestra investigación, sabemos que la mutación de Japón no causa efectos en el virus. Para el genoma de México es importante recordar que el virus llegó desde Italia, no directamente de Wuhan, es por ello que vemos dos mutaciones importantes que sí cambian al virus, especialmente en el aspecto de infectividad como lo es para el caso de la mutación D614G. Esta mutación fue de las primeras más importantes y permanentes en el virus ya que lo volvió más fuerte. Todos los genomas actuales del virus contienen esta mutación.
+En conclusión, podemos observar que nuestras dos hipótesis son correctas. Al analizar los primeros genomas de cada país, podemos ver que no existen mutaciones en ellas. Las únicas mutaciones que vemos en la tabla es una de Japón y dos de México. Tras nuestra investigación, sabemos que la mutación de Japón no causa efectos en el virus. Para el genoma de México es importante recordar que el virus llegó desde Italia, no directamente de Wuhan, es por ello que vemos dos mutaciones importantes que sí cambian al virus, especialmente en el aspecto de infectividad como lo es para el caso de la mutación D614G. Esta mutación fue de las primeras más importantes y permanentes en el virus ya que lo volvió más fuerte. Todos los genomas actuales del virus contienen esta mutación.
 
 Por todo lo anterior, podemos establecer que prácticamente no hubo mutaciones en los genes estructurales cuando el virus viajó directamente de Wuhan a los otros países estudiados, la única excepción siendo Japón. Además, podemos establecer una hipótesis para futuros análises la cual es: "El virus sufrió 2 o más mutaciones estructurales importantes al viajar de un país secundario a uno terciario".
 
 
 Lamentablemente, no se puede concluir con certeza que nuestra segunda hipótesis es correcta, ya que aunque sí podemos ver que dos meses después sí hay más mutaciones, estas no son realmente significantes ni sabemos si son lo suficientemente mortales para crear una variante. Para determinar si las mutaciones encontradas tienen el poder de crear una variante, sería necesario comparar los genomas con algunas variantes conocidas como Alpha, Omicron y Delta.
 Sin embargo, sí pudimos observar que en países que había llegado con mutaciones, dos meses después ya tenían una o dos. Es interesante ver que aunque el virus se propaga muy rápido, dos meses es un periodo de tiempo muy corto para realmente tener una cantidad de mutaciones significante.
->>>>>>> 6ef0ac0544ee218ad05252f84b62c2993ba5849b
 
 
 ### Datasets:
